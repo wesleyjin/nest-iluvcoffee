@@ -32,12 +32,12 @@ $ nest g co --dry-run  # simulated run
     ```typescript
     // Receive ALL request params:
     findOne(@Param() params) {
-        return '${params.id}';
+        return `${params.id}`;
     }
     
     // or get directly:
     findOne(@Param('id') id: string) {
-        return '${id}';
+        return `${id}`;
     }
     ```
 
@@ -53,3 +53,11 @@ $ nest g co --dry-run  # simulated run
 ## Handling Update & Delete Requests
 * Use `@Patch` to update entity, & `@Delete` to delete. Same usage as decorators above.
 
+## Pagination with Query Parameters
+* Limit response length using pages. As best practice, use query parameters to filter/sort.
+* Use `@Query` decorator similar to how @Param and @Body used.
+* Wrap strings with ticks ``` ` ``` to use interpolation: `${param}` 
+* Object destructuring:
+    ```typescript
+    const { limit, offset } = paginationQuery
+    ```

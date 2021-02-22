@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
 
 @Controller('coffees')
 export class CoffeesController {
@@ -8,15 +8,16 @@ export class CoffeesController {
     }
 
     @Get('flavors') // for /coffees/flavors endpoint
-    findAll() {
-        return 'This action returns all coffee flavors';
+    findAll(@Query() paginationQuery) {
+        const { limit, offset } = paginationQuery;  //object destructuring
+    return `This action returns all coffee flavors. Limit: ${limit}, offset: ${offset}`;
     }
 
     @Get(':id')
     findOne(@Param('id') id: string) {
         return `This action returns coffee #${id}`;
     }
-    
+
     @Post()
     create(@Body() body: any) {
         return body;
