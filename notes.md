@@ -41,3 +41,7 @@ $ nest g co --dry-run  # simulated run
     }
     ```
 
+## Handling Request body/payload
+* Use `@Post` decorator similar to how `@Get` is used
+* Use `@Body` decorator in function args similar to how `@Param` is used. Can specify exact arguments to get in decorator argument, or get all values by leaving empty.
+
