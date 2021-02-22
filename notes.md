@@ -48,4 +48,4 @@ $ nest g co --dry-run  # simulated run
 ## Response Status Codes
 * By default, nest responds with`200` and `201` status codes for successful execution.
 * `@HttpCode` decorator lets us set a specific code for the entire response. Use IDE to find appropriate code by using `HttpStatus.` Enum. Useful when status code is static.
-    * Can also use `@Res` for full control of response. However lose compatibility with nest features that depend on default response behavior (interceptors or HttpCode).
+    * Can also use platform native `@Res` (express/fastify) for full control of response. However lose compatibility with nest features that depend on default response behavior (interceptors or HttpCode). Requires mocking response object for tests. 
