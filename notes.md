@@ -45,3 +45,7 @@ $ nest g co --dry-run  # simulated run
 * Use `@Post` decorator similar to how `@Get` is used
 * Use `@Body` decorator in function args similar to how `@Param` is used. Can specify exact arguments to get in decorator argument, or get all values by leaving empty.
 
+## Response Status Codes
+* By default, nest responds with`200` and `201` status codes for successful execution.
+* `@HttpCode` decorator lets us set a specific code for the entire response. Use IDE to find appropriate code by using `HttpStatus.` Enum. Useful when status code is static.
+    * Can also use `@Res` for full control of response. However lose compatibility with nest features that depend on default response behavior (interceptors or HttpCode).
