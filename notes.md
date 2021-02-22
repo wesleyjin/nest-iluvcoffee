@@ -61,3 +61,12 @@ $ nest g co --dry-run  # simulated run
     ```typescript
     const { limit, offset } = paginationQuery
     ```
+
+## Services
+* Helps separate business logic from controllers. Separating business logic into services helps us reuse logic across multiple parts of app.
+* Creating new:
+    ```bash
+    $ nest generate service
+    # or shorthand:
+    $ nest g s
+    ```
