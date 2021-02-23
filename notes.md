@@ -131,4 +131,4 @@ $ nest g co --dry-run  # simulated run
 
 ## Transform payloads to DTO instances
 * By default, objects passed in from requests are just generic JS objects. How to we transform them to DTOs? Use `ValidationPipe({ transform: true })`
-* 
+* Transform also performs primitive type transformations
