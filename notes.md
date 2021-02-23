@@ -148,3 +148,8 @@ $ nest g co --dry-run  # simulated run
 * Enitity: DB table <-> Nest class
 * Use decorators to link entity properties with DB columns
 * Use `.forFeature` to add to imports of feature module.
+
+
+## Using Repository to Access Database
+* Design pattern: Each entity has a repository. Interacts with & abstracts away data source.
+* Inject ORM respository into service constructor to use Repo object to perform CRUD operations on DB.
