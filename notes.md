@@ -163,3 +163,6 @@ $ nest g co --dry-run  # simulated run
     * Many-to-many relations: This is when every row in the primary table has many related rows in the foreign table, and every record in the foreign table has many related rows in the primary table. In TypeOrm, we define these types of relations with the  `@ManyToMany()` decorator.
 
 * `@JoinTable` specifies the owner side of relationship.
+
+## Retrieve Entities with their Relations
+* Pass `relations` argument to `Repository` method, specifying which relation(s) to include

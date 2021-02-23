@@ -13,12 +13,16 @@ export class CoffeesService {
     ) {}
 
     findAll() {
-        return this.coffeeRepository.find();
+        return this.coffeeRepository.find({
+            relations: ['flavors'],
+        });
     }
 
     async findOne(id: string) {
         // throw 'A random error';  // Try built-in exception handling
-        const coffee = await this.coffeeRepository.findOne(id);  //await result since Promise is returned
+        const coffee = await this.coffeeRepository.findOne(id, {
+            relations: ['flavors'],
+        });  //await result since Promise is returned
         if (!coffee) {
             throw new NotFoundException(`Coffee #${id} not found`);
         }
