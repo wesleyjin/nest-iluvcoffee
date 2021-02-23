@@ -86,3 +86,7 @@ $ nest g co --dry-run  # simulated run
     * `: CoffeesService`: Dependency resolved by type. Nest creates & returns an instance of service to controller. In the normal case of a singleton, returns existing instance if already requested elsewhere. 
 * Services contain business logic and any connections to data sources.
 * Resource `entities` are the schemas defining object attributes and types.
+
+## User-Friendly Error Messages
+* Can throw `new HTTPException(msg, code)` or use some built-ins like `NotFoundException`
+* For exceptions not handled (non-http), Nest has a built-in exception layer. Logged as a "randomError" in service logs.
