@@ -15,6 +15,8 @@ $ npm run start
 $ npm run start:dev  
 ```
 
+# Creating a REST API Application
+
 ## Creating a basic controller
 * Basic building blocks of controller = classes & decorators.
 * Update routes using HTTP decorators (ex. `@Get()`)
@@ -132,3 +134,12 @@ $ nest g co --dry-run  # simulated run
 ## Transform payloads to DTO instances
 * By default, objects passed in from requests are just generic JS objects. How to we transform them to DTOs? Use `ValidationPipe({ transform: true })`
 * Transform also performs primitive type transformations
+
+# Add PostgreSQL with TypeORM
+
+## Setup
+* Install dependencies
+    ```bash
+    $ npm install @nestjs/typeorm typeorm pg
+    ```
+* Add Module to app.module.ts imports & configure
