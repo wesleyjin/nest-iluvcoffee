@@ -70,3 +70,19 @@ $ nest g co --dry-run  # simulated run
     # or shorthand:
     $ nest g s
     ```
+    *  Adds service, test file, and updates provider service array
+* "Provider": can inject dependencies. Objects can create various relationships with each other, and the function of "wiring up" instances of objects can largely be delegated to the Nest runtime system.
+* To add service to controller, add constructor to corresponding controller class
+    ```typescript
+    @Controller('coffees')
+    export class CoffeesController {
+        constructor(private readonly coffeesService: CoffeesService) {}
+    /* ... */
+    }
+    ```
+    * `private` (access modifier): Shorthand that allows us to declare and initialize service member in same location; makes it only accessible within the class itself. 
+    * `readonly`: Best-practice; ensures we aren't modifying the service referenced & only accessing things from it.
+    * `coffeesService`: Naming the parameter
+    * `: CoffeesService`: Dependency resolved by type. Nest creates & returns an instance of service to controller. In the normal case of a singleton, returns existing instance if already requested elsewhere. 
+* Services contain business logic and any connections to data sources.
+* Resource `entities` are the schemas defining object attributes and types.
