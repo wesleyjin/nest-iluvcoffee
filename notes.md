@@ -118,3 +118,8 @@ $ nest g co --dry-run  # simulated run
 
 ### Validating Input Data with DTOs
 * The `ValidationPipe` provides a convenient way of enforcing validation rules for all incoming client payloads. You can specify these rules by using simple annotations in your DTO.
+> Install required packages `npm i class-validator class-transformer`
+* Simply add decorators to attributes in DTOs to add validation.
+* To remove redundant code for DTOs (update/create), use mapped-types
+    * `npm i @nestjs/mapped-types`
+    * `PartialType` allows us to copy all properties set to optional & inherit all validation rules applied. 
