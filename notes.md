@@ -103,3 +103,14 @@ $ nest g co --dry-run  # simulated run
     * imports: List other modules that this module requires
     * providers: List services that need to be instantiated by Nest injector. Only available in this module unless added to exports array.
 * Ensure that module components not listed in app-level controllers/providers, otherwise they would be instantiated twice.
+
+## Data Transfer Objects (DTO)
+* Object used to encapsulate data & send/receive between systems. Helps define interfaces for input/output for a system.
+* Instead of using a generic `body`, can use DTO classes.
+* To create (example):
+    ```bash
+    nest g class coffees/dto/create-coffee.dto --no-spec
+    ```
+    * Best practices: `.dto` format, separate DTO directory
+* Adds full type safety to method args. DTOs are simple - no business logic, methods, nor anything that requires testing. Create shape or object interface of what DTO is.
+* Another best practice is making all properties readonly.
