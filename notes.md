@@ -90,3 +90,16 @@ $ nest g co --dry-run  # simulated run
 ## User-Friendly Error Messages
 * Can throw `new HTTPException(msg, code)` or use some built-ins like `NotFoundException`
 * For exceptions not handled (non-http), Nest has a built-in exception layer. Logged as a "randomError" in service logs.
+
+## Modules
+* Way to encompass business domains. Organize code relevant for a specific feature.
+* Create by:
+    ```bash
+    $ nest g module <module-name>
+    ```
+* Simply a class annotated with `@Module` decorator. The decorator provides metadata about context:
+    * controllers: API routes that the module should instantiate
+    * exports: List providers in the module that should be available anywhere module is imported
+    * imports: List other modules that this module requires
+    * providers: List services that need to be instantiated by Nest injector. Only available in this module unless added to exports array.
+* Ensure that module components not listed in app-level controllers/providers, otherwise they would be instantiated twice.
