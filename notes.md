@@ -142,4 +142,9 @@ $ nest g co --dry-run  # simulated run
     ```bash
     $ npm install @nestjs/typeorm typeorm pg
     ```
-* Add Module to app.module.ts imports & configure
+* Add Module to app.module.ts imports & configure `.forRoot`
+
+## Creating a TypeORM entity
+* Enitity: DB table <-> Nest class
+* Use decorators to link entity properties with DB columns
+* Use `.forFeature` to add to imports of feature module.
