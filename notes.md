@@ -166,3 +166,7 @@ $ nest g co --dry-run  # simulated run
 
 ## Retrieve Entities with their Relations
 * Pass `relations` argument to `Repository` method, specifying which relation(s) to include
+
+## Cascading Inserts & Updates
+* Insert new relational values using cascade. Add `{cascade: true}` to relation decorator.
+> `...` the spread operator allows iterable to be expanded. All elements passed as individual argments.
