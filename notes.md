@@ -153,3 +153,13 @@ $ nest g co --dry-run  # simulated run
 ## Using Repository to Access Database
 * Design pattern: Each entity has a repository. Interacts with & abstracts away data source.
 * Inject ORM respository into service constructor to use Repo object to perform CRUD operations on DB.
+
+## Create Relation between two Entites
+* Use relationship decorators: 
+    * One-to-one: The first are one-to-one relations. In these relations every row in the primary table has one - and only one associated row in the foreign table. In TypeOrm, we define these types of relations with the `@OneToOne()` decorator.
+
+    * One-to-many or Many-to-one relations: For these relations - every row in the primary table has one or more related rows in the foreign table. In TypeOrm, we define these types of relations with the  `@OneToMany()` and `@ManyToOne()` decorators.
+    
+    * Many-to-many relations: This is when every row in the primary table has many related rows in the foreign table, and every record in the foreign table has many related rows in the primary table. In TypeOrm, we define these types of relations with the  `@ManyToMany()` decorator.
+
+* `@JoinTable` specifies the owner side of relationship.
