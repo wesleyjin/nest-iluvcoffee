@@ -127,3 +127,8 @@ $ nest g co --dry-run  # simulated run
 ## Handling Malicious Request Data
 * "Whitelist"ing acceptable properties with ValidationPipe strips all other properties out of request: `whitelist:true`
 * Prevent requests with non-whitelisted properties from performing actions at all using `forbidNonWhitelisted: true`
+
+
+## Transform payloads to DTO instances
+* By default, objects passed in from requests are just generic JS objects. How to we transform them to DTOs? Use `ValidationPipe({ transform: true })`
+* 
