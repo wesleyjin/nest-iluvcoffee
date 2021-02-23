@@ -123,3 +123,7 @@ $ nest g co --dry-run  # simulated run
 * To remove redundant code for DTOs (update/create), use mapped-types
     * `npm i @nestjs/mapped-types`
     * `PartialType` allows us to copy all properties set to optional & inherit all validation rules applied. 
+
+## Handling Malicious Request Data
+* "Whitelist"ing acceptable properties with ValidationPipe strips all other properties out of request: `whitelist:true`
+* Prevent requests with non-whitelisted properties from performing actions at all using `forbidNonWhitelisted: true`
