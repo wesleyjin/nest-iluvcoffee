@@ -114,3 +114,7 @@ $ nest g co --dry-run  # simulated run
     * Best practices: `.dto` format, separate DTO directory
 * Adds full type safety to method args. DTOs are simple - no business logic, methods, nor anything that requires testing. Create shape or object interface of what DTO is.
 * Another best practice is making all properties readonly.
+* To make properties optional, add `?` suffix to property name in class.
+
+### Validating Input Data with DTOs
+* The `ValidationPipe` provides a convenient way of enforcing validation rules for all incoming client payloads. You can specify these rules by using simple annotations in your DTO.
